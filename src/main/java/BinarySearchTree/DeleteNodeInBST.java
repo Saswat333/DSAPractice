@@ -1,4 +1,4 @@
-package BinaryTree;
+package BinarySearchTree;
 
 public class DeleteNodeInBST {
     public TreeNode deleteNode(TreeNode root, int key){

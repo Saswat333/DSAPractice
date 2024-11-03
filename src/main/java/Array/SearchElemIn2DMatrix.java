@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Array;
 
 public class SearchElemIn2DMatrix {
     public static void main(String[] args) {

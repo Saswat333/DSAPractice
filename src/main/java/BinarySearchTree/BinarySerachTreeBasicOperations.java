@@ -136,8 +136,8 @@ public class BinarySerachTreeBasicOperations {
     }
 
     public int ceilValue(TreeNode root, int key){
-        // when checking key with root value, if root value is bigger than key at the iteration save the node value as that
-        // might be the ceil and we dont find any value larger than the key later
+        // when checking key with root value, if root value is bigger than key at the iteration save the node value as
+        // that might be the ceil and we dont find any value larger than the key later
         int ceil = -1;
         while(root != null){
             if(root.val == key) {
@@ -153,13 +153,5 @@ public class BinarySerachTreeBasicOperations {
         }
         // if no exact value found return the nearest larger number
         return ceil;
-    }
-
-    private boolean isValidBST(TreeNode root, int min, int max){
-        if(root == null)
-            return true;
-        if(root.val <= min || root.val >= max)
-            return false;
-        return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
     }
 }
