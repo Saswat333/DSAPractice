@@ -5,47 +5,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class MedianStream {
-    ArrayList<Integer> store = new ArrayList<>();
-    List<Integer> data = new ArrayList<>();
+    List<Integer> data;
 
-    public int findMedianAprroachFirst(int input){
-        store.add(input);
-        for(int i=0;i<store.size()-1;i++){
-            int lastElem = store.get(store.size()-1);
-            if(store.get(i)>lastElem){
-                Collections.swap(store, i, store.size()-1);
-            }
-        }
-        System.out.println(store);
-        int n = store.size();
-        int mid = n/2; // 2
-        System.out.println("mid: "+mid);
-        int medianValue = 0;
-        if(n%2==0){
-            medianValue = (store.get(mid)+store.get(mid-1))/2;
-        }
-        else{
-            medianValue = store.get(mid);
-        }
-        return medianValue;
-    }
-
-
-    public void inputFunctionFirst(){
-        int median = 0;
-//         int[] arr ={3,2,4,5,2,7,8,3};
-        int[] arr = {8,2,5,4};
-//        int[] arr ={40,10,100,120,30,40,140,20};
-        for(int i=0;i<arr.length;i++){
-            median = findMedianAprroachFirst(arr[i]);
-
-            System.out.println("Input: "+arr[i]+ " Median: "+median);
-            System.out.println();
-        }
-
+    public MedianStream() {
+        this.data = new ArrayList<>();
     }
 
     public void addNum(int num){
+//        if(data.size()==0)
+//            data.add(num);
         System.out.println("Post Array: "+ data);
         int indx = Collections.binarySearch(data, num);
         System.out.println("indx: "+indx);
@@ -87,9 +55,26 @@ public class MedianStream {
 
     public static void main(String[] args) {
         MedianStream obj = new MedianStream();
-//        obj.inputFunctionFirst();
-
         obj.inputFunctionInsertationSort();
     }
 
 }
+
+
+/*
+If we can sort the data as it appears, we can easily locate the median element. Insertion Sort is one such online algorithm that sorts the data appeared so far.
+At any instance of sorting, say after sorting i-th element, the first i elements of the array are sorted. The insertion sort doesn’t depend on future data to sort data
+input till that point. In other words, insertion sort considers data sorted so far while inserting the next element. This is the key part of insertion sort that makes it an online algorithm.
+
+However, insertion sort takes O(n2) time to sort n elements. Perhaps we can use binary search on insertion sort to find the location of the next element in O(log n) time.
+Yet, we can’t do data movement in O(log n) time. No matter how efficient the implementation is, it takes polynomial time in case of insertion sort.
+TC: O(n^2) , Space: O(n)
+* */
+
+/*
+Collections.binarySearch(array, elem)
+Return:
+    1. if the elem is present in the array it will return a +ve value of the index
+    2. If the elem is not present in the array it will return a -ve value which will be the index value of place where
+        can insert the value in the list.
+* */

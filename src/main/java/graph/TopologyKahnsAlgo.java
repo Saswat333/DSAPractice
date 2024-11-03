@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -34,7 +35,7 @@ public class TopologyKahnsAlgo {
                 in_degree[it]++;
             }
         }
-
+        System.out.println(Arrays.toString(in_degree));
         Queue<Integer> que = new LinkedList<>();
 
         // initially: add all in-degree 0 to queue

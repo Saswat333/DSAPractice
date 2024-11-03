@@ -12,7 +12,9 @@ public class JumpGame {
         int n = nums.length;
         int[] dp = new int[n+1];
         Arrays.fill(dp,-1);
-        boolean ans = obj.solveMemoization(nums, n,0, dp);
+//        boolean ans = obj.solveMemoization(nums, n,0, dp);
+//        System.out.println("Result: "+ ans);
+        boolean ans = obj.solveRecurssion(nums, n,0);
         System.out.println("Result: "+ ans);
     }
 
@@ -30,6 +32,19 @@ public class JumpGame {
             }
         }
         dp[indx] = 0;
+        return false;
+    }
+
+    private boolean solveRecurssion(int[] nums, int n, int indx) {
+        if(indx==n-1)
+            return true;
+        if(indx>=n-1)
+            return true;
+        for(int i=1;i<=nums[indx];i++){
+            if(solveRecurssion(nums,n, indx+i)){
+                return  true;
+            }
+        }
         return false;
     }
 

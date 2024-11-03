@@ -9,16 +9,26 @@ public class QueueUsingStack {
     public QueueUsingStack(){
         stack1 = new Stack<>();
         stack2 = new Stack<>();
-
-
     }
 
     public void enQueue(int i) {
-
+        stack1.push(i);
     }
 
     public int deQueue() {
-        return 0;
+        int result=0;
+        //if both stack are empty
+
+        //move element from stack1 to stack2 only if stack2 is empty
+        if(stack2.isEmpty()){
+            while(!stack1.isEmpty()){
+                result = stack1.pop();
+                stack2.push(result);
+            }
+        }
+        if(!stack2.isEmpty())
+            result = stack2.pop();
+        return result;
     }
 }
 /*

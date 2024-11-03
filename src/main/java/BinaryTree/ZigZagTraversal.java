@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ZigZagTraversal {
-    private static ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
+    public static ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
         Queue<TreeNode> que = new LinkedList<>();
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         if(root == null)
@@ -51,23 +51,27 @@ public class ZigZagTraversal {
         return res;
     }
 
-    public static void main(String[] args) {
-        int i, j;
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
-        ArrayList <ArrayList< Integer >> ans;
-        ans = zigzagLevelOrder(root);
-        System.out.println("Zig Zag Traversal of Binary Tree ");
-        for (i = 0; i < ans.size(); i++) {
-            for (j = 0; j < ans.get(i).size(); j++) {
-                System.out.print(ans.get(i).get(j) + " ");
-            }
-            System.out.println();
-        }
-    }
+//    public static void main(String[] args) {
+//        int i, j;
+//        TreeNode root = new TreeNode(3);
+//        root.left = new TreeNode(9);
+//        root.right = new TreeNode(20);
+//        root.left.right = new TreeNode(11);
+//        root.right.left = new TreeNode(15);
+//        root.right.right = new TreeNode(7);
+//        root.left.right.left = new TreeNode(10);
+//        root.right.left.left = new TreeNode(13);
+//        root.right.left.right = new TreeNode(16);
+//        ArrayList <ArrayList< Integer >> ans;
+//        ans = zigzagLevelOrder(root);
+//        System.out.println("Zig Zag Traversal of Binary Tree ");
+//        for (i = 0; i < ans.size(); i++) {
+//            for (j = 0; j < ans.get(i).size(); j++) {
+//                System.out.print(ans.get(i).get(j) + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
 
 }

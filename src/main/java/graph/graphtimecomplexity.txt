@@ -1,0 +1,20 @@
+### TRAVERSAL ALGORITHMS
+Time complexities for different representations of Graph:
+1. Edge List:
+    Edge list consists of all the edges in a list. In order to do the BFS time complexity is O(E^2).Because for every edge u->v, you have to traverse through entire edge list
+    and find the edges whose source vertex is u and explore them, then explore the vertices 'v' which are in u->v to do the BFS.
+    Where E is the number of edges.
+    If you sort the edges based on source index and destination index, then the sorted list will be in BFS order. Just traverse the list, you will get the BFS.
+    Time complexity is O(E*log(E)) for sorting the edge list.
+
+2. Adjacency List
+    Adjacency is a map of keys, where every vertex is a key and points to a list of vertices which are incident from or adjacent to that key vertex.
+    In order to perform BFS, put any vertex in the queue and make it as visited, pop the queue[0], pick the starting vertex, explore all its adjacent vertexes,
+    make them as visited and put them in the queue and similarly pop the queue[0] and explore all the non-visited vertices until the queue becomes empty.
+    For every vertex, you are traversing through only its adjacent non-visited vertexes(nothing but edges).
+    So, the time complexity is O(V+E)
+
+3. Matrix
+    In matrix representation, for every vertex, you have to traverse through all the vertices and check whether there is a non-visited vertex.
+    Since, for every vertex, we are traversing through all the vertices,
+    The time complexity is O(V^2)

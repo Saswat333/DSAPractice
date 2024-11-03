@@ -1,6 +1,7 @@
-package graph;//Using FindUnion to solve the MST problem
+//Using FindUnion to solve the MST problem
 // we store the edge weights in asc sorted order
 
+package graph;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -74,7 +75,8 @@ public class Kruskal {
 }
 
 //1. First, we need to extract the edge information(if not given already) from the given adjacency list in the format of (wt, u, v)
-// where u is the current node, v is the adjacent node and wt is the weight of the edge between node u and v and we will store the tuples in an array.
+// where u is the current node, v is the adjacent node and wt is the weight of the edge between node u and v and we will
+// store the tuples in an array.
 //2. Then the array must be sorted in the ascending order of the weights so that while iterating we can get the edges
 // with the minimum weights first.
 //3. After that, we will iterate over the edge information, and for each tuple, we will apply the  following operation:

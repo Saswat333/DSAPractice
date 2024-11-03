@@ -13,11 +13,11 @@ import java.util.Arrays;
 //2. to find how many extra edges needed to completely connect the graph we have to do union operation, #union = #extra edges needed
 //3. now count the components just by finding the ultimate parent of each node.
 //4. If count of  extra edges is greater or same we will return the answer that is(#components-1), else return -1
-public class NewtworkConnectOperations {
+public class NetworkConnectOperations {
     int[] size;
     int[] parent;
 
-    NewtworkConnectOperations(int v){
+    NetworkConnectOperations(int v){
         size = new int[v];
         parent = new int[v];
         Arrays.fill(size, 1);
@@ -48,7 +48,7 @@ public class NewtworkConnectOperations {
         int V = 9;
         int[][] edge = {{0, 1}, {0, 2}, {0, 3}, {1, 2}, {2, 3}, {4, 5}, {5, 6}, {7, 8}};
 
-        NewtworkConnectOperations obj = new NewtworkConnectOperations(9);
+        NetworkConnectOperations obj = new NetworkConnectOperations(9);
         int ans = obj.solveByUnionFind(V, edge);
         System.out.println("The number of operations needed: " + ans);
     }

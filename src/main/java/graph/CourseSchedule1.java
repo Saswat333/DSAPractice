@@ -83,3 +83,5 @@ public class CourseSchedule1 {
         return false;
     }
 }
+//Time = O(V+E) , V is the number of course and E is the number of prerequisits(edges)
+//Space=O(v+E), extra space for adj list to store all nodes and the in-degree edges
