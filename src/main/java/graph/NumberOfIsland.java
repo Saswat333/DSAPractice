@@ -1,6 +1,6 @@
 package graph;
 
-public class DistinctIsland {
+public class NumberOfIsland {
     public static void main(String[] args) {
         char[][] grid =  {
                 {'0', '1', '1', '1', '0', '0', '0'},
@@ -11,7 +11,7 @@ public class DistinctIsland {
 
         char[][] grid2 = {{'0','0','0'},{'0','1','0'},{'0','1','0'}};
 
-        DistinctIsland obj = new DistinctIsland();
+        NumberOfIsland obj = new NumberOfIsland();
         System.out.println("Number of island: "+obj.numIslands(grid2));
     }
 

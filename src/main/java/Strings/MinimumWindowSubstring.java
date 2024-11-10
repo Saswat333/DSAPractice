@@ -48,3 +48,15 @@ public class MinimumWindowSubstring {
 
 //TIME : O(m+n)
 //space: O(n+m) <- hasha,p will store char of both strings
+/*
+IDEA: SLIDING WINDOW
+1. using i and j to keep a window
+2. use a map to keep the character count of t
+3. keep variables like minwindow and currentwindowsize
+4. while: move j ahead and keep reducing the characters if they exist in t, from the map and requiredCount--
+5. when requiredcount ==0
+    a. check window size(i-j+1), with minMindowSize
+    b. if the window is smaller replace with minwindowSize, and save the start_i and end_i(start_i+minWindowSize)
+    c. if not, then move i forward and add the removed elements into the map and increase requiredCount
+7. at the end of s return then substring between start_i and end_i
+* */
