@@ -49,7 +49,9 @@ public class CheckCycleInDirected {
         for(int nextNode: adj.get(node)){
             //node is not visited
             if(vis[nextNode]==0){
-                if(dfsCheck(nextNode, adj, vis, pathVis)) return true;
+                if(dfsCheck(nextNode, adj, vis, pathVis))
+                    //if there was a cycle detected
+                    return true;
             }
             //node visited is true and path visited is also true, that means the node is visited again in same path
             //so there is cycle return true
@@ -62,3 +64,15 @@ public class CheckCycleInDirected {
         return false;
     }
 }
+/*
+ How algo not same as Undirected graph ?
+    - if there is a node(3) which has 2 incoming nodes(1 and 2), and both are directed to same node.
+    - if un-directed graph logic the common node(3) will be visited already(by 1) and when we try to visit 3 from 2.
+    then 3's will be visited , and its parent will be 1. So we the algo says there is cycle. WHICH IS WRONG.
+
+Correct Algorithm:
+    - There will be 2 different call stack for reaching 3.
+    - So we need to save the path visited in an array.
+    - if we find a neighbor which is already visited and its present in the call stack, only then we can say there
+    is a Cycle.
+* */

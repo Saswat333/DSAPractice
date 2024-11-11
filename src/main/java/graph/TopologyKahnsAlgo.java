@@ -43,7 +43,7 @@ public class TopologyKahnsAlgo {
             if(in_degree[i]==0)
                 que.add(i);
         }
-        //not do bfs and remove the node and reduce the indegree
+        //not do bfs and remove the node and reduce the in-degree
         int[] result = new int[v];
         int itr=0;
         while(!que.isEmpty()){
@@ -57,7 +57,31 @@ public class TopologyKahnsAlgo {
                 }
             }
         }
-
+        //to find cycle check if the count of nodes in the result is equal to V
+//        if(result.length == v)
+//            return true;// no cycle
         return result;
     }
 }
+/*
+Time complexity: O(V+E)
+    𝑉 is the number of courses (vertices) and 𝐸 is the number of prerequisites (edges).
+Space complexity: O(V+E)
+    Space is used for the adjacency list and the in-degree array.
+
+For finding cycle refer CoureseScheduler-I in leetcode.
+
+Approach
+We use Topological Sorting via Kahn's Algorithm (DFS-based approach) to detect cycles in the directed graph:
+
+-Graph Representation:
+We represent the graph using an adjacency list. Each course points to a list of courses that depend on it.
+-In-Degree Calculation:
+We calculate the in-degree for each course. The in-degree represents the number of prerequisites for each course.
+-Queue Initialization:
+Initialize a queue and add all courses with zero in-degrees (i.e., courses with no prerequisites).
+-BFS and Topological Sort:
+Perform BFS. For each course processed, reduce the in-degree of its neighbors (dependent courses). If any neighbor's in-degree becomes zero, add it to the queue.
+-Cycle Detection:
+Maintain a count of processed courses. If this count equals the total number of courses, it means all courses can be completed (no cycle). Otherwise, a cycle exists.
+* */

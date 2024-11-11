@@ -27,7 +27,7 @@ public class TopologicalSort {
 
     private int[] topoSort(int v, ArrayList<ArrayList<Integer>> adj) {
         boolean[] vis = new boolean[v];
-        Stack<Integer> stk = new Stack<>();
+        Stack<Integer> stk = new Stack<>();//store the result when doing dfs
         for(int i=0;i<v;i++){
             if(!vis[i]){
                 //if not visited then dfs traverse on it
