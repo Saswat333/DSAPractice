@@ -1,8 +1,8 @@
 package Strings;
 
-public class AddString {
+public class AddTwoNumberAsString {
     public static void main(String[] args) {
-        AddString obj = new AddString();
+        AddTwoNumberAsString obj = new AddTwoNumberAsString();
 //        String num1 = "12,345";
 //        String num2 = "98,765";
 
