@@ -1,4 +1,4 @@
-import Array.LeftRightSum;
+import array.LeftRightSum;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
