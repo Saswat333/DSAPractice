@@ -39,13 +39,14 @@ public class AlienDictionary {
         }
 
         // Now we have the adj list ready of nodes which
-        List<Integer> topo = topoSort(k, adj);
-        String ans = "";
+        List<Integer> topo = topoSort(k, adj); //returns the index of the chars, [1, 3, 0, 2] for b,d,a,c
+
+        StringBuilder ans = new StringBuilder();
         for(int it: topo){
-            ans = ans+(char)(it+(int)('a'));
+            ans.append((char) (it + (int) ('a')));
         }
 
-        return ans;
+        return ans.toString();
     }
 
     private List<Integer> topoSort(int v, List<List<Integer>> adj) {
@@ -80,3 +81,33 @@ public class AlienDictionary {
         return topo;
     }
 }
+
+//time complexity:
+//space complexity:
+
+/*
+gfg: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+tuf [above solution explanation]: https://takeuforward.org/data-structure/alien-dictionary-topological-sort-g-26/
+
+LeetCode(Premium)
+There is a new alien language that uses the English alphabet However, the order among the letters is unknown to you.
+You are given a list of strings words from the alien language's dictionary, where the strings
+in words are sorted lexicographically by the rules of this new language.
+Return a string of the unique letters in the new alien language sorted in lexicographically increasing order,
+by the new language's rules. If there is no solution, return "".
+If there are multiple solutions, return any of them.
+A string s is lexicographically smaller than a string t if at the first letter where they
+differ, the letter in s comes before the letter in t in the alien language. If the first
+min(s.length, t. length) letters are the same, then s is smaller if and only if s. length
+< t. length .
+Example 1:
+Input: words = ["wrt , "wrf", "er","ett", rftt"]
+Output: "wertf"
+
+
+Simple Explanation:
+- pick 2 string at a time iterate over it and if there is a mismatch then add those 2 characters to
+    adjecency list.
+- from the above line we would have formed a adjecency list, now run the topological sort on the list.
+
+* */
