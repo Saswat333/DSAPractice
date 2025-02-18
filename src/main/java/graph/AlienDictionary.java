@@ -82,8 +82,12 @@ public class AlienDictionary {
     }
 }
 
-//time complexity:
-//space complexity:
+//time complexity: O(n)+O(v+e)
+//O(N*len)+O(K+E), where N is the number of words in the dictionary,
+// ‘len’ is the length up to the index where the first inequality occurs, K = no. of nodes, and E = no. of edges.
+//space complexity: 4k
+//O(4K), O(K) for the indegree array, and O(K) for the queue data structure used in BFS(where K = no.of nodes), O(K)
+// for the answer array and O(K) for the adjacency list used in the algorithm.
 
 /*
 gfg: https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/

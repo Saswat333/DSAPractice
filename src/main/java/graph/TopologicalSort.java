@@ -26,6 +26,7 @@ public class TopologicalSort {
     }
 
     private int[] topoSort(int v, ArrayList<ArrayList<Integer>> adj) {
+        //main method
         boolean[] vis = new boolean[v];
         Stack<Integer> stk = new Stack<>();//store the result when doing dfs
         for(int i=0;i<v;i++){
@@ -55,3 +56,6 @@ public class TopologicalSort {
         stk.push(node);
     }
 }
+/*
+Time: O(V+E)
+* */

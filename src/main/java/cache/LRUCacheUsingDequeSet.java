@@ -5,13 +5,13 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class LRUCacheUsingSet {
+public class LRUCacheUsingDequeSet {
     Deque<Integer> que;
     HashSet<Integer> set;
     private final int CACHE_SIZE ;
 
     //constructor
-    public LRUCacheUsingSet(int capacity){
+    public LRUCacheUsingDequeSet(int capacity){
         que = new LinkedList<>();
         set = new HashSet<>();
         CACHE_SIZE = capacity;
@@ -41,7 +41,7 @@ public class LRUCacheUsingSet {
     }
 
     public static void main(String[] args) {
-        LRUCacheUsingSet cache = new LRUCacheUsingSet(4);
+        LRUCacheUsingDequeSet cache = new LRUCacheUsingDequeSet(4);
         cache.pageCache(1);
         cache.pageCache(2);
         cache.pageCache(3);

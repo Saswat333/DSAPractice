@@ -69,7 +69,7 @@ Time complexity: O(V+E)
 Space complexity: O(V+E)
     Space is used for the adjacency list and the in-degree array.
 
-For finding cycle refer CoureseScheduler-I in leetcode.
+For finding cycle refer Course Scheduler-I in leetcode.
 
 Approach
 We use Topological Sorting via Kahn's Algorithm (DFS-based approach) to detect cycles in the directed graph:
